@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc && npm run copy-files",
+    "build:cp": "tsc && cp index.html style.css dist/",
     "watch": "tsc --watch",
     "copy-files": "copyfiles index.html style.css dist/",
     "serve": "cd dist && npx http-server"
