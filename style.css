@@ -1,0 +1,78 @@
+:root {
+  /* Color Scheme Variables - Dark theme (default) */
+  --background-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --primary-color: #4a90e2;
+  --container-bg: #2a2a2a;
+
+  /* Typography */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* Light theme overrides using media query */
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #f4f4f4;
+    --text-color: #222222;
+    --primary-color: #0056b3;
+    --container-bg: #ffffff;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Heading styles */
+h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  background-color: var(--container-bg);
+  overflow: hidden;
+  box-sizing: border-box;
+  /* Position and dimensions handled by JavaScript */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Canvas styles */
+#gameCanvas {
+  display: block;
+  background-color: #333;
+  /* Position and size handled by JavaScript */
+}
+
+/* UI Container styles */
+#uiContainer {
+  display: block;
+  flex-grow: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  overflow-y: auto;
+  /* Position and size will be adjusted relative to canvas */
+}

@@ -1,0 +1,44 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "typescript",
+			"tsconfig": "tsconfig.json",
+			"option": "watch",
+			"problemMatcher": [
+				"$tsc-watch"
+			],
+			"group": "build",
+			"label": "tsc: watch",
+			"isBackground": true
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build",
+			"detail": "Build the project"
+		},
+		{
+			"type": "npm",
+			"script": "serve",
+			"group": "none",
+			"problemMatcher": [],
+			"label": "npm: serve",
+			"detail": "Start the development server",
+			"isBackground": true
+		},
+		{
+			"label": "Dev Environment",
+			"dependsOrder": "sequence",
+			"dependsOn": ["npm: build", "tsc: watch", "npm: serve"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"isBackground": true
+		}
+	]
+} 
